@@ -1,0 +1,14 @@
+function revealWords(arg1, arg2) {
+    let words = arg1.split(`, `);
+    let text = arg2.split(` `);
+    let mainText = arg2;
+    for (let element of words) {
+        for (let chr of text) {
+            let censored = "*".repeat(element.length);
+            if (chr === censored) {
+                mainText = mainText.replace(chr, element);
+            }
+        }
+    }
+    console.log(mainText);
+}
